@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.learners-journey{
+    background: linear-gradient(to left top, aliceblue, aquamarine, aliceblue);
+}
+
+.learners-journey h1{
+    display: grid;
+    place-items: center;
+    font-size: 36px;
+    padding-top: 25px;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.journey-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px 35px;
+    margin-top: 10px;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.arrow-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 20px;
+}
+
+.arrow-btn i {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/*
+
+.wrapper i{
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 50px;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.wrapper i:first-child{
+    left: -22px;
+}
+
+.wrapper i:last-child{
+    right: -22px;
+}
+
+*/
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel .dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel .dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: auto;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding:20px;
+    border: 2px solid gainsboro;
+}
+
+.learner-details{
+    width: 100%;
+    background-image: url(img/boxbg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+}
+
+.card .img {
+    background: #8B53FF;
+    width: 137px;
+    height: 137px;
+    border-radius: 50%;
+}
+
+.card .img img {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.card h3 {
+    font-weight: 500;
+    font-size: 1.40rem;
+    padding-top: 10px;
+}
+
+.placedcompany-logo {
+    padding-top: 10px;
+}
+
+.placedcompany-logo img {
+    width: 150px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    margin: 10px 0;
+}
+
+.career-path{
+    margin-top: 8px;
+}
+
+.career-path .step1,
+.career-path .step3 {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+.career-path .step2{
+    position: relative;
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: transparent;
+    margin-left: -35px;
+}
+
+.career-path .step1 .dot {
+    width: 12px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(201, 195, 195);
+    margin-right: 10px;
+}
+
+.career-path .step2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.career-path .step3 i {
+    color: red;
+    background-color: yellow;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.career-path .step1 p,
+.career-path .step3 p {
+    font-size: 15px;
+}
+
+.career-path .timeline {
+    margin-left: 28px;
+    border-left: 3px dashed gainsboro;
+}
+
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+
+    .learners-journey h1{
+        font-size: 25px;
+    }
+
+}
